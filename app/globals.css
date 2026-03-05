@@ -1,0 +1,162 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================
+   CAFEX — Design Tokens
+   ============================================ */
+
+:root {
+  /* ── Shadcn semantic tokens mapped to Cafex ── */
+  --background: #F5F0E8;
+  --foreground: #2C1810;
+  --card: #FFFFFF;
+  --card-foreground: #2C1810;
+  --popover: #FFFFFF;
+  --popover-foreground: #2C1810;
+  --primary: #C8722A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F0EAE6;
+  --secondary-foreground: #2C1810;
+  --muted: #F0EAE6;
+  --muted-foreground: #8C7B70;
+  --accent: #FDF6ED;
+  --accent-foreground: #2C1810;
+  --destructive: #C43D3D;
+  --destructive-foreground: #FFFFFF;
+  --border: #D9CEC7;
+  --input: #D9CEC7;
+  --ring: #C8722A;
+  --chart-1: #C8722A;
+  --chart-2: #B85C38;
+  --chart-3: #3D8B5E;
+  --chart-4: #D99645;
+  --chart-5: #2A7EC8;
+  --radius: 0.5rem;
+  --sidebar: #2C1810;
+  --sidebar-foreground: #F5F0E8;
+  --sidebar-primary: #C8722A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #382922;
+  --sidebar-accent-foreground: #F5F0E8;
+  --sidebar-border: #453530;
+  --sidebar-ring: #C8722A;
+}
+
+.dark {
+  --background: #1A0E09;
+  --foreground: #F0EAE6;
+  --card: #2C1810;
+  --card-foreground: #F0EAE6;
+  --popover: #2C1810;
+  --popover-foreground: #F0EAE6;
+  --primary: #D99645;
+  --primary-foreground: #1A0E09;
+  --secondary: #382922;
+  --secondary-foreground: #F0EAE6;
+  --muted: #382922;
+  --muted-foreground: #B5A79D;
+  --accent: #382922;
+  --accent-foreground: #F0EAE6;
+  --destructive: #C43D3D;
+  --destructive-foreground: #FFFFFF;
+  --border: #453530;
+  --input: #453530;
+  --ring: #D99645;
+  --chart-1: #D99645;
+  --chart-2: #B85C38;
+  --chart-3: #3D8B5E;
+  --chart-4: #C8722A;
+  --chart-5: #2A7EC8;
+  --sidebar: #1A0E09;
+  --sidebar-foreground: #F0EAE6;
+  --sidebar-primary: #D99645;
+  --sidebar-primary-foreground: #1A0E09;
+  --sidebar-accent: #2C1810;
+  --sidebar-accent-foreground: #F0EAE6;
+  --sidebar-border: #382922;
+  --sidebar-ring: #D99645;
+}
+
+@theme inline {
+  /* ── Tipografía ── */
+  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-heading: var(--font-dm-serif), 'DM Serif Display', Georgia, serif;
+  --font-mono: var(--font-jetbrains), 'JetBrains Mono', monospace;
+
+  /* ── Colores Ámbar (Primario) ── */
+  --color-amber-50:  #FDF6ED;
+  --color-amber-100: #FAEBD4;
+  --color-amber-200: #F4D3A8;
+  --color-amber-300: #EDBA7C;
+  --color-amber-400: #D99645;
+  --color-amber-500: #C8722A;
+  --color-amber-600: #A85D1F;
+  --color-amber-700: #874A18;
+  --color-amber-800: #663812;
+  --color-amber-900: #45260D;
+
+  /* ── Colores Espresso (Neutro) ── */
+  --color-espresso-50:  #FAF7F5;
+  --color-espresso-100: #F0EAE6;
+  --color-espresso-200: #D9CEC7;
+  --color-espresso-300: #B5A79D;
+  --color-espresso-400: #8C7B70;
+  --color-espresso-500: #5C483D;
+  --color-espresso-600: #453530;
+  --color-espresso-700: #382922;
+  --color-espresso-800: #2C1810;
+  --color-espresso-900: #1A0E09;
+
+  /* ── Colores Especiales ── */
+  --color-crema: #F5F0E8;
+  --color-terracota: #B85C38;
+
+  /* ── Shadcn semantic colors ── */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
