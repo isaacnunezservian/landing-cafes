@@ -98,6 +98,55 @@ export function CasesSection() {
           </div>
         </motion.a>
 
+        {/* Hero Video — Magno (mobile/vertical format) */}
+        <div className="flex flex-col items-center mb-10 md:mb-14">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-3 px-4 py-2 border border-espresso-200 rounded-full w-fit mb-6"
+          >
+            <div className="w-2.5 h-2.5 bg-amber-500 rounded-full" />
+            <span className="text-sm font-medium text-espresso-500 tracking-wide">Último lanzamiento</span>
+          </motion.div>
+          <motion.a
+            href="https://magnosapori.online"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="relative block aspect-[9/16] w-full max-w-[360px] mx-auto rounded-2xl overflow-hidden group cursor-pointer shadow-2xl shadow-espresso-900/20"
+          >
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="h-full w-full object-cover brightness-[0.85] transition-all duration-700 group-hover:scale-[1.03] group-hover:brightness-[0.7]"
+            >
+              <source src="/images/cases/magno-showcase.mp4" type="video/mp4" />
+            </video>
+
+            {/* Permanent subtle overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20" />
+
+            {/* Center CTA */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                className="flex items-center gap-3 bg-white/95 backdrop-blur-md px-7 py-3.5 rounded-full shadow-xl group-hover:bg-white transition-all duration-500"
+              >
+                <span className="text-espresso-800 font-semibold text-sm md:text-base">Hacé clic para verlo en vivo</span>
+                <ArrowUpRight className="w-5 h-5 text-amber-600 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </motion.div>
+            </div>
+          </motion.a>
+        </div>
+
         {/* Case Images Grid */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4">
           {cases.map((item, index) => (

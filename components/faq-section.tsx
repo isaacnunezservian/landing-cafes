@@ -32,9 +32,9 @@ const faqs: FAQItem[] = [
   },
   {
     id: "4",
-    question: "¿Sirve como página web y para Instagram?",
+    question: "¿Sirve como página web, para Instagram y Google Maps?",
     answer:
-      "Sí, las dos cosas. Cafex es ideal como página web para posicionarte en Google y como link para tu bio de Instagram. Está totalmente optimizada por su diseño y calidad visual. Incluso si lo necesitás, podemos hacer 2 versiones: una para el QR en tu local y otra para Instagram.",
+      "Sí, las dos cosas y más. Cafex es ideal como página web para posicionarte en Google y como link para tu bio de Instagram. Además, podés sumar tu menú a tu ficha de Google Maps: cuando alguien busca cafeterías en el mapa, encuentra tu carta actualizada y llega directo a tu local. Más visibilidad en Maps = más visitantes que te descubren. Si lo necesitás, hacemos 2 versiones: una para el QR en tu local y otra para Instagram.",
   },
   {
     id: "5",
@@ -94,7 +94,7 @@ export function FaqSection() {
             </p>
 
             <a
-              href="https://wa.me/5491170061908?text=Hola%2C%20tengo%20una%20consulta%20sobre%20Cafex"
+              href="https://wa.me/5491155092051?text=Hola%2C%20tengo%20una%20consulta%20sobre%20Cafex"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 inline-flex items-center gap-2 text-amber-500 hover:text-amber-600 transition-colors text-sm font-medium w-fit"

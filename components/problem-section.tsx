@@ -17,7 +17,7 @@ const painPoints = [
   {
     icon: <Printer className="w-6 h-6" />,
     title: "Reimprimís menús todo el tiempo",
-    description: "Con inflación, los precios cambian cada semanas. Reimprimir es caro, lento y nunca llega a tiempo.",
+    description: "Con inflación, los precios cambian cada semana. Reimprimir es caro, lento y nunca llega a tiempo.",
   },
   {
     icon: <UserCog className="w-6 h-6" />,
@@ -86,6 +86,14 @@ export function ProblemSection() {
         </div>
 
         <div className="flex flex-col gap-4 pt-12 sm:flex-row sm:justify-center">
+          <div className="mb-2 text-center">
+            <p className="font-heading text-2xl md:text-3xl text-amber-600">
+              Cambiá los precios de tu carta en 10 segundos
+            </p>
+            <p className="text-espresso-400 text-sm mt-1">Sin llamarnos. Sin pagar extra. Desde el celu.</p>
+          </div>
+        </div>
+        <div className="flex flex-col gap-4 pt-4 sm:flex-row sm:justify-center">
           <a href="#casos" className="bg-amber-500 px-8 py-3 font-semibold text-white rounded-lg transition-all hover:bg-amber-600 active:scale-95">
             Ver Casos de Éxito
           </a>

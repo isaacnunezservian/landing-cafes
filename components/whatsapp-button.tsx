@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export function WhatsAppButton() {
   return (
     <motion.a
-      href="https://wa.me/5491170061908?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Cafex"
+      href="https://wa.me/5491155092051?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Cafex"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"

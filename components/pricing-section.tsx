@@ -1,11 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { CheckCircle2, MessageCircle, Sparkles, Shield, Laptop, Coffee, Palette, MapPin, Star, QrCode, Upload, MonitorSmartphone } from "lucide-react";
+import { MessageCircle, Sparkles, Shield, Laptop, Coffee, Palette, MapPin, Star, QrCode, Upload, MonitorSmartphone } from "lucide-react";
 
 const features = [
   { icon: Palette, text: "Diseño 100% personalizado a tu identidad de marca" },
-  { icon: MonitorSmartphone, text: "Panel de admin: cambiá precios desde el celu en 5 segundos" },
+  { icon: MonitorSmartphone, text: "Panel de admin: cambiá precios desde el celu en 10 segundos" },
   { icon: QrCode, text: "QR listo para imprimir en tu local" },
   { icon: Upload, text: "Carga completa del menú — solo pasanos fotos de tu carta" },
   { icon: Coffee, text: "Capacitación presencial en tu cafetería" },
@@ -40,7 +41,7 @@ export function PricingSection() {
             <span className="text-sm font-medium text-amber-400 tracking-wide">Precio</span>
           </motion.div>
           <h2 className="text-balance text-4xl md:text-5xl tracking-tight leading-tight font-heading text-crema">
-            {"Todo incluido, un solo precio".split(" ").map((word, i) => (
+            {"Planes a medida de tu cafetería".split(" ").map((word, i) => (
               <motion.span
                 key={i}
                 initial={{ filter: "blur(10px)", opacity: 0 }}
@@ -54,7 +55,9 @@ export function PricingSection() {
             ))}
           </h2>
           <p className="text-crema/60 text-base max-w-xl">
-            No estás pagando por un menú. Estás invirtiendo en una presencia digital profesional que trabaja para vos 24/7.
+            Cada local es distinto.{" "}
+            <strong className="text-crema/80">Consultá con el equipo de ventas</strong> y armamos
+            la propuesta ideal para vos.
           </p>
         </div>
 
@@ -71,35 +74,6 @@ export function PricingSection() {
             <div className="h-1 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500" />
 
             <div className="p-8 md:p-12">
-              {/* Price Block */}
-              <div className="text-center mb-10">
-                {/* Discount Badge */}
-                <div className="inline-flex items-center gap-2 bg-red-500/15 border border-red-500/40 px-5 py-2 rounded-full mb-5">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
-                  </span>
-                  <span className="text-sm font-semibold text-red-400">Oferta válida hasta el 08/03</span>
-                </div>
-
-                <div className="flex items-center justify-center gap-3 mb-2">
-                  <span className="font-mono text-2xl md:text-3xl text-crema/40 line-through decoration-red-500/60 decoration-2">
-                    $500.000
-                  </span>
-                </div>
-                <div className="flex items-baseline justify-center gap-2 mb-1">
-                  <span className="font-mono text-6xl md:text-7xl font-bold text-crema tracking-tighter">
-                    $300.000
-                  </span>
-                </div>
-                <div className="inline-flex items-center gap-2 bg-amber-500/15 border border-amber-500/30 px-4 py-1.5 rounded-full mt-3 mb-3">
-                  <Sparkles className="w-4 h-4 text-amber-400" />
-                  <span className="text-sm font-medium text-amber-400">Todo incluido · Ahorrás $200.000</span>
-                </div>
-                <p className="text-crema/50 text-base font-mono">ARS · Pago único</p>
-                <p className="text-crema/40 text-sm mt-2">Después del primer año: mantenimiento $50.000/año</p>
-              </div>
-
               {/* Divider */}
               <div className="flex items-center gap-4 mb-10">
                 <div className="flex-1 h-px bg-crema/10" />
@@ -126,10 +100,34 @@ export function PricingSection() {
                 ))}
               </div>
 
-              {/* CTA */}
-              <div className="text-center">
+              {/* Jeremías + CTA */}
+              <div className="flex flex-col items-center gap-6">
+                {/* Sales rep */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4 }}
+                  className="flex items-center gap-4"
+                >
+                  <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-amber-500/40 shadow-lg shadow-amber-500/10 flex-shrink-0">
+                    <Image
+                      src="/images/jeremias-ventas.png"
+                      alt="Jeremías, equipo de ventas de Cafex"
+                      fill
+                      className="object-cover"
+                      sizes="56px"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-crema font-semibold text-sm">Jeremías</p>
+                    <p className="text-crema/50 text-xs">Equipo de ventas · responde rápido</p>
+                  </div>
+                </motion.div>
+
+                {/* CTA */}
                 <motion.a
-                  href="https://wa.me/5491170061908?text=Hola%2C%20quiero%20crear%20mi%20Cafex"
+                  href="https://wa.me/5491155092051?text=Hola%2C%20quiero%20consultar%20sobre%20Cafex"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.03 }}
@@ -137,9 +135,10 @@ export function PricingSection() {
                   className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold text-base px-10 py-4 rounded-xl transition-colors shadow-lg shadow-amber-500/20"
                 >
                   <MessageCircle className="w-5 h-5" />
-                  Quiero mi Cafex
+                  Consultar con ventas
                 </motion.a>
-                <p className="text-crema/40 text-sm mt-4">
+
+                <p className="text-crema/40 text-sm">
                   Respondemos en minutos · Sin compromisos
                 </p>
               </div>

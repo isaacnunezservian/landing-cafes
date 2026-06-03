@@ -85,7 +85,7 @@ export function Hero() {
           >
             <div className="flex items-center gap-2.5 rounded-full border border-amber-400/20 bg-amber-500/10 px-4 py-2">
               <Smartphone className="h-4 w-4 text-amber-400 shrink-0" />
-              <span className="text-sm text-crema/90 font-medium">Cambiá tus precios desde el celu</span>
+              <span className="text-sm text-crema/90 font-medium">Cambiá los precios de tu carta en 10 segundos</span>
             </div>
             <div className="flex items-center gap-2.5 rounded-full border border-crema/15 bg-crema/5 px-4 py-2">
               <QrCode className="h-4 w-4 text-amber-400 shrink-0" />

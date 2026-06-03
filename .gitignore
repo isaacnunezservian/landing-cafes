@@ -35,10 +35,15 @@ prompt.txt
 
 # archivos auxiliares / media pesada
 *.mp4
+!public/**/*.mp4
 *.zip
 *.jpg
 *.jpeg
 *.png
+!public/**/*.jpg
+!public/**/*.jpeg
+!public/**/*.png
+!public/**/*.webp
 BRAND-IDENTITY.md
 BASE-CONOCIMIENTO-CAFEX.md
 BASE-CONOCIMIENTO-VENTAS.md
@@ -47,3 +52,4 @@ Nuevo Text Document.txt
 Casos de exito/
 .agents/
 skills-lock.json
+Landing/

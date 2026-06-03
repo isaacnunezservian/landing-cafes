@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guion de Ventas — Cafex</title>
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page {
+      size: A4;
+      margin: 16mm;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #F5F0E8;
+      color: #2C1810;
+      font-size: 11pt;
+      line-height: 1.65;
+    }
+
+    /* ─── Layout ─── */
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+
+    /* ─── Header ─── */
+    .doc-header {
+      background: #2C1810;
+      color: #F5F0E8;
+      padding: 28px 32px 24px;
+      border-radius: 8px 8px 0 0;
+      break-inside: avoid;
+    }
+
+    .doc-header .brand {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 28pt;
+      font-weight: 900;
+      letter-spacing: 4px;
+      color: #C8722A;
+      text-transform: uppercase;
+    }
+
+    .doc-header .brand span {
+      color: #F5F0E8;
+    }
+
+    .doc-header h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15pt;
+      font-weight: 700;
+      color: #F5F0E8;
+      margin-top: 4px;
+      letter-spacing: 1px;
+    }
+
+    .doc-header .badge {
+      display: inline-block;
+      margin-top: 10px;
+      background: #C8722A;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 3px 12px;
+      border-radius: 20px;
+    }
+
+    /* ─── Sections ─── */
+    section {
+      background: #fff;
+      border-left: 4px solid #C8722A;
+      padding: 20px 24px;
+      margin-top: 16px;
+      border-radius: 0 6px 6px 0;
+      break-inside: avoid;
+    }
+
+    section.no-break {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #C8722A;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13.5pt;
+      font-weight: 800;
+      color: #2C1810;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #2C1810;
+      margin: 14px 0 6px;
+    }
+
+    p { margin-bottom: 8px; }
+
+    /* ─── Lists ─── */
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    li::marker {
+      color: #C8722A;
+    }
+
+    /* ─── Highlight box ─── */
+    .highlight-box {
+      background: #FDF6ED;
+      border: 1.5px solid #C8722A;
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin: 12px 0;
+      break-inside: avoid;
+    }
+
+    .highlight-box p {
+      margin: 0;
+      font-size: 10.5pt;
+      color: #2C1810;
+    }
+
+    /* ─── Funcionalidades grid ─── */
+    .func-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .func-card {
+      background: #FDF6ED;
+      border-radius: 6px;
+      padding: 12px 14px;
+      break-inside: avoid;
+    }
+
+    .func-card .func-icon {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .func-card .func-title {
+      font-family: Arial, sans-serif;
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #2C1810;
+      margin-bottom: 3px;
+    }
+
+    .func-card .func-badge {
+      display: inline-block;
+      font-family: Arial, sans-serif;
+      font-size: 7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 1px 7px;
+      border-radius: 10px;
+      margin-bottom: 5px;
+    }
+
+    .func-badge.nuevo { background: #C8722A; color: #fff; }
+    .func-badge.bonus { background: #2C1810; color: #F5F0E8; }
+    .func-badge.incluido { background: #5a8a3a; color: #fff; }
+
+    .func-card p {
+      font-size: 9pt;
+      color: #453530;
+      margin: 0;
+    }
+
+    /* ─── Tabla objeciones ─── */
+    .objection-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 9.5pt;
+      break-inside: avoid;
+    }
+
+    .objection-table thead tr {
+      background: #2C1810;
+      color: #F5F0E8;
+    }
+
+    .objection-table th {
+      font-family: Arial, sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 9px 14px;
+      text-align: left;
+    }
+
+    .objection-table td {
+      padding: 9px 14px;
+      vertical-align: top;
+      border-bottom: 1px solid #e8e0d8;
+    }
+
+    .objection-table tr:nth-child(even) td {
+      background: #FDF6ED;
+    }
+
+    .objection-table .obj-col {
+      width: 38%;
+      font-weight: 700;
+      color: #B85C38;
+    }
+
+    /* ─── Script de llamada ─── */
+    .script-step {
+      margin-bottom: 16px;
+      break-inside: avoid;
+    }
+
+    .step-pill {
+      display: inline-block;
+      background: #C8722A;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    .quote-block {
+      background: #2C1810;
+      color: #F5F0E8;
+      border-radius: 6px;
+      padding: 14px 18px;
+      font-style: italic;
+      font-size: 10pt;
+      line-height: 1.7;
+      margin-top: 6px;
+      break-inside: avoid;
+    }
+
+    .quote-block em {
+      font-style: normal;
+      color: #C8722A;
+      font-weight: 700;
+    }
+
+    /* ─── Argumentos ─── */
+    .arg-item {
+      background: #FDF6ED;
+      border-left: 3px solid #C8722A;
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      border-radius: 0 4px 4px 0;
+      break-inside: avoid;
+    }
+
+    .arg-item .arg-title {
+      font-family: Arial, sans-serif;
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #2C1810;
+      margin-bottom: 3px;
+    }
+
+    .arg-item p {
+      font-size: 9pt;
+      color: #453530;
+      margin: 0;
+    }
+
+    /* ─── Casos de éxito ─── */
+    .cases-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .case-card {
+      background: #2C1810;
+      color: #F5F0E8;
+      border-radius: 6px;
+      padding: 16px 18px;
+      break-inside: avoid;
+    }
+
+    .case-card .case-name {
+      font-family: Arial, sans-serif;
+      font-size: 11pt;
+      font-weight: 800;
+      color: #C8722A;
+      letter-spacing: 1px;
+    }
+
+    .case-card .case-url {
+      font-family: Arial, sans-serif;
+      font-size: 8.5pt;
+      color: #F5F0E8;
+      opacity: 0.7;
+      margin-top: 2px;
+    }
+
+    .case-card p {
+      font-size: 9pt;
+      color: #D9CEC7;
+      margin-top: 8px;
+    }
+
+    /* ─── Contacto final ─── */
+    .contact-banner {
+      background: #C8722A;
+      color: #fff;
+      padding: 22px 28px;
+      border-radius: 6px;
+      margin-top: 16px;
+      break-inside: avoid;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-banner .contact-name {
+      font-family: Arial, sans-serif;
+      font-size: 15pt;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .contact-banner .contact-role {
+      font-family: Arial, sans-serif;
+      font-size: 9pt;
+      opacity: 0.85;
+      margin-top: 2px;
+    }
+
+    .contact-banner .contact-number {
+      font-family: "Courier New", monospace;
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    /* ─── Argumentos de venta ─── */
+    .beneficio-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 8px;
+    }
+
+    .beneficio-list li {
+      padding: 6px 0 6px 22px;
+      position: relative;
+      border-bottom: 1px solid #e8e0d8;
+      font-size: 10pt;
+    }
+
+    .beneficio-list li:last-child { border-bottom: none; }
+
+    .beneficio-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #C8722A;
+      font-weight: 700;
+    }
+
+    /* ─── Divider ─── */
+    .divider {
+      height: 2px;
+      background: linear-gradient(to right, #C8722A, transparent);
+      margin: 6px 0 14px;
+      border-radius: 2px;
+    }
+
+    /* ─── Footer ─── */
+    .doc-footer {
+      margin-top: 16px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 8pt;
+      color: #8C7B70;
+      break-inside: avoid;
+    }
+
+    /* ─── Print ─── */
+    @media print {
+      body { background: #fff; }
+      .page { padding: 0; }
+      section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══════════════════════════════════════════
+       ENCABEZADO
+  ═══════════════════════════════════════════ -->
+  <div class="doc-header">
+    <div class="brand">CAF<span>EX</span></div>
+    <h1>Guion de Ventas — Equipo Telefónico</h1>
+    <span class="badge">Uso interno · Equipo de ventas · Confidencial</span>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       1. QUÉ ES CAFEX / PARA QUIÉN
+  ═══════════════════════════════════════════ -->
+  <section class="no-break">
+    <div class="section-label">Sección 1</div>
+    <h2>¿Qué es Cafex y para quién es?</h2>
+    <div class="divider"></div>
+    <p><strong>Cafex</strong> crea <strong>menús digitales premium con diseño 100% personalizado</strong> para cafeterías, bares y negocios gastronómicos. No es un template genérico: es una página web profesional con los colores, logo y personalidad del negocio, accesible por QR y link.</p>
+    <ul>
+      <li>Cafeterías de especialidad, panaderías boutique, heladerías artesanales</li>
+      <li>Bares, brunch spots, food trucks con menú rotativo</li>
+      <li>Cualquier negocio gastronómico que cambia precios seguido y quiere verse profesional en redes</li>
+    </ul>
+    <div class="highlight-box">
+      <p><strong>Tagline:</strong> "No vendas café, vendé una experiencia." — Cafex transforma menús ordinarios en experiencias digitales que honran la identidad de cada marca.</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       2. EL PROBLEMA
+  ═══════════════════════════════════════════ -->
+  <section class="no-break">
+    <div class="section-label">Sección 2</div>
+    <h2>El problema que resolvemos</h2>
+    <div class="divider"></div>
+    <ul>
+      <li>La carta impresa queda <strong>desactualizada</strong> cada vez que sube un precio.</li>
+      <li>Reimprimir cuesta tiempo y plata — a veces cada 2 o 3 semanas.</li>
+      <li>Los clientes preguntan por precios en Instagram o WhatsApp todo el día.</li>
+      <li>No tienen presencia en Google ni Google Maps: los clientes no los encuentran.</li>
+      <li>Los menús QR baratos del mercado parecen todos iguales — no reflejan la identidad del local.</li>
+    </ul>
+    <div class="highlight-box">
+      <p><strong>CTA principal:</strong> "Cambiá los precios de tu carta en 10 segundos — sin diseñador, sin esperar, sin costo extra."</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       3. FUNCIONALIDADES CLAVE
+  ═══════════════════════════════════════════ -->
+  <section>
+    <div class="section-label">Sección 3</div>
+    <h2>Funcionalidades clave + novedades</h2>
+    <div class="divider"></div>
+
+    <div class="func-grid">
+
+      <div class="func-card">
+        <div class="func-icon">⚡</div>
+        <div class="func-title">Precios en 10 segundos</div>
+        <p>Entrá al panel, tocá el precio, escribí el nuevo, Enter. Se actualiza al instante en la carta pública. Sin costo extra.</p>
+      </div>
+
+      <div class="func-card">
+        <div class="func-icon">🖼️</div>
+        <div class="func-title">Carta editable (imagen)</div>
+        <span class="func-badge nuevo">Nuevo</span>
+        <p>Convertimos la carta impresa del dueño en una imagen editable desde el panel. Cambia precios y descarga lista para imprimir, con el mismo diseño de siempre.</p>
+      </div>
+
+      <div class="func-card">
+        <div class="func-icon">🌍</div>
+        <div class="func-title">Idioma + Moneda</div>
+        <span class="func-badge nuevo">Nuevo</span>
+        <p>El comensal elige Español/Inglés y ARS/USD/BRL al escanear. Toda la carta aparece en su idioma y con precios en su moneda. Ideal para turistas.</p>
+      </div>
+
+      <div class="func-card">
+        <div class="func-icon">📶</div>
+        <div class="func-title">WiFi por QR</div>
+        <span class="func-badge nuevo">Nuevo</span>
+        <p>Al escanear el QR, el cliente se conecta directo al WiFi del local. Sin pedir la clave, sin fricción.</p>
+      </div>
+
+      <div class="func-card">
+        <div class="func-icon">🎬</div>
+        <div class="func-title">8 piezas para Instagram</div>
+        <span class="func-badge bonus">Bonus</span>
+        <p>Vamos al local, grabamos contenido y entregamos 8 piezas listas para publicar en Instagram. Sin costo extra del plan.</p>
+      </div>
+
+      <div class="func-card">
+        <div class="func-icon">📌</div>
+        <div class="func-title">QR impresos e instalados</div>
+        <span class="func-badge bonus">Bonus</span>
+        <p>Llevamos los QR impresos e instalados en las mesas. El dueño no imprime ni diseña nada.</p>
+      </div>
+
+      <div class="func-card">
+        <div class="func-icon">📋</div>
+        <div class="func-title">Menú del día</div>
+        <span class="func-badge incluido">Incluido</span>
+        <p>El dueño carga el menú del día desde el panel. Aparece en la carta digital y se quita cuando quiera. Incluido en el plan base.</p>
+      </div>
+
+      <div class="func-card">
+        <div class="func-icon">🗺️</div>
+        <div class="func-title">Web + Instagram + Google Maps</div>
+        <p>Funciona como página web completa. El link va en la bio de Instagram. Se integra a Google Maps — cuando alguien busca cafeterías en Maps, encuentra la carta actualizada.</p>
+      </div>
+
+    </div>
+
+    <h3 style="margin-top:18px;">Extras a medida (fuera del plan base — cotización aparte)</h3>
+    <ul>
+      <li><strong>Pantallas/TV en el local:</strong> menú del día, videos o imágenes para pantallas internas.</li>
+      <li><strong>Cartel QR de calle:</strong> diseño e impresión de cartel exterior con QR.</li>
+    </ul>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       4. ARGUMENTOS DE VENTA
+  ═══════════════════════════════════════════ -->
+  <section>
+    <div class="section-label">Sección 4</div>
+    <h2>Argumentos de venta (en clave beneficio)</h2>
+    <div class="divider"></div>
+
+    <div class="arg-item">
+      <div class="arg-title">Más ventas y más clientes</div>
+      <p>Aparecen en Google Maps cuando alguien busca "cafeterías cerca". El 80% de los consumidores busca un negocio online antes de visitarlo. Más visibilidad = más puertas abiertas.</p>
+    </div>
+
+    <div class="arg-item">
+      <div class="arg-title">Imagen profesional que genera confianza</div>
+      <p>El 75% de los consumidores juzga la credibilidad de un negocio por su presencia web. Un menú digital premium transmite seriedad desde el primer escaneo.</p>
+    </div>
+
+    <div class="arg-item">
+      <div class="arg-title">Autonomía total — sin depender de nadie</div>
+      <p>El dueño cambia precios, agrega promos del día y gestiona el menú desde su celular, 24/7. Sin diseñador, sin espera, sin costo extra.</p>
+    </div>
+
+    <div class="arg-item">
+      <div class="arg-title">Captás turistas y clientes internacionales</div>
+      <p>Con el selector de idioma y moneda, los turistas ven la carta en inglés y en su moneda. Nadie se va porque no entendió los precios.</p>
+    </div>
+
+    <div class="arg-item">
+      <div class="arg-title">Te encuentran en Google y en Maps</div>
+      <p>La carta funciona como página web indexable. Más presencia en Google = más clientes que descubren el local sin que el dueño haga nada extra.</p>
+    </div>
+
+    <div class="arg-item">
+      <div class="arg-title">Ahorro real en reimpresión y diseño</div>
+      <p>Una cafetería que reimprime menús 4 veces al año puede gastar entre $50.000 y $150.000 ARS solo en impresión y diseño. Con Cafex, ese gasto es $0 para siempre.</p>
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       5. MANEJO DE OBJECIONES
+  ═══════════════════════════════════════════ -->
+  <section>
+    <div class="section-label">Sección 5</div>
+    <h2>Manejo de objeciones</h2>
+    <div class="divider"></div>
+
+    <table class="objection-table">
+      <thead>
+        <tr>
+          <th>Objeción</th>
+          <th>Respuesta sugerida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="obj-col">"¿Cuánto sale?"</td>
+          <td>No hay precio fijo — armamos una propuesta a medida según el tamaño y las necesidades del local. Lo que sí te puedo decir es que muchos dueños recuperan la inversión sola con lo que dejan de gastar en reimprimir el menú. ¿Querés que te pase con Jeremías para ver los detalles?</td>
+        </tr>
+        <tr>
+          <td class="obj-col">"Ya tengo carta / menú"</td>
+          <td>Tu carta actual sigue siendo tuya — la carta editable parte de esa misma imagen que ya tenés. Además sumás QR en las mesas, idiomas para turistas, integración con Maps e Instagram. Es complementario, no un reemplazo.</td>
+        </tr>
+        <tr>
+          <td class="obj-col">"Es complicado / no sé de tecnología"</td>
+          <td>Vos no hacés nada técnico. Nosotros configuramos todo y te hacemos una capacitación de 15 minutos para que manejes los precios desde tu celular. Es tan fácil como mandar un mensaje de WhatsApp.</td>
+        </tr>
+        <tr>
+          <td class="obj-col">"No tengo tiempo"</td>
+          <td>Justamente por eso: nosotros instalamos los QR en las mesas, cargamos el menú completo y te entregamos todo listo. Los cambios después te llevan 10 segundos desde el celular. Cafex te ahorra tiempo, no te lo quita.</td>
+        </tr>
+        <tr>
+          <td class="obj-col">"Lo voy a pensar"</td>
+          <td>Perfecto. Para ayudarte a decidir, ¿te puedo mostrar dos ejemplos reales? Entrá a <strong>fillippo.online</strong> o <strong>magnosapori.online</strong> — así ves exactamente cómo queda. Después hablamos con más datos sobre la mesa.</td>
+        </tr>
+        <tr>
+          <td class="obj-col">"Ya uso otra plataforma"</td>
+          <td>¿Esa plataforma te permite tener tu propio diseño con tus colores y tu logo, o es un template igual al de otros 500 locales? La diferencia es que tu Cafex parece TU página web, no la de una app genérica.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       6. SCRIPT DE LLAMADA
+  ═══════════════════════════════════════════ -->
+  <section>
+    <div class="section-label">Sección 6</div>
+    <h2>Script de llamada</h2>
+    <div class="divider"></div>
+
+    <div class="script-step">
+      <span class="step-pill">Apertura — 0:00–0:30</span>
+      <div class="quote-block">
+        "Hola [<em>nombre</em>], ¿cómo estás? Soy [<em>nombre</em>] de <em>Cafex</em>. Te llamo porque estamos trabajando con cafeterías y restaurantes para modernizar la forma en que muestran su carta a los clientes. ¿Tenés un minuto para que te cuente?"
+      </div>
+    </div>
+
+    <div class="script-step">
+      <span class="step-pill">Descubrimiento — 2–3 preguntas clave</span>
+      <ul style="margin-top: 8px;">
+        <li>"¿Cómo manejás la carta actualmente: impresa, en Instagram, por foto de WhatsApp?"</li>
+        <li>"¿Cada cuánto actualizás los precios? ¿Te cuesta reimprimir?"</li>
+        <li>"¿Si alguien busca tu local en Google o Maps, te encuentra fácilmente con el menú?"</li>
+      </ul>
+    </div>
+
+    <div class="script-step">
+      <span class="step-pill">Pitch corto — 0:45–1:30</span>
+      <div class="quote-block">
+        "Lo que hacemos en Cafex es crear un menú digital de alta calidad con <em>el diseño de tu marca</em>: tus colores, tu logo, tus fotos. El cliente escanea un QR en la mesa o toca un link en tu Instagram y ve algo hermoso, con precios actualizados en tiempo real.<br><br>
+        Lo mejor es que <em>vos podés cambiar los precios desde tu celular en 10 segundos</em>, sin llamar a nadie, sin costo extra. Y además tu local aparece en Google Maps cuando alguien busca cafeterías cerca."
+      </div>
+    </div>
+
+    <div class="script-step">
+      <span class="step-pill">Mostrar casos reales</span>
+      <div class="quote-block">
+        "Mirá, para que lo veas en acción antes de decidir nada: entrá a <em>fillippo.online</em> o a <em>magnosapori.online</em> desde el celular. Así ves exactamente cómo queda. ¿Podés verlo ahora o te mando el link por WhatsApp?"
+      </div>
+    </div>
+
+    <div class="script-step">
+      <span class="step-pill">Cierre y derivación a Jeremías</span>
+      <div class="quote-block">
+        "Genial. Para hablar de los detalles y armar una propuesta a medida para tu local, te conecto con <em>Jeremías</em>, que es quien maneja los planes. Él te puede dar toda la info y si querés, lo empezamos esta semana. ¿Te paso el contacto por WhatsApp?"
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       7. CASOS DE ÉXITO
+  ═══════════════════════════════════════════ -->
+  <section class="no-break">
+    <div class="section-label">Sección 7</div>
+    <h2>Casos de éxito (para mostrar o mencionar)</h2>
+    <div class="divider"></div>
+    <div class="cases-row">
+      <div class="case-card">
+        <div class="case-name">Fillippo</div>
+        <div class="case-url">fillippo.online</div>
+        <p>Cafetería de especialidad. Menú digital premium con diseño personalizado, galería, mapa y botón de WhatsApp. Precios actualizados en tiempo real desde el panel.</p>
+      </div>
+      <div class="case-card">
+        <div class="case-name">Magno Sapori</div>
+        <div class="case-url">magnosapori.online</div>
+        <p>Experiencia en formato mobile (vertical). Carta actualizada, integración con Maps e Instagram. Caso reciente — ideal para mostrar a prospectos en formato celular.</p>
+      </div>
+    </div>
+    <p style="margin-top:10px; font-size:9pt; color:#8C7B70;">Tip: mandá el link por WhatsApp durante la llamada para que el prospecto lo abra en tiempo real mientras hablás.</p>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       8. CONTACTO / DERIVACIÓN
+  ═══════════════════════════════════════════ -->
+  <section class="no-break">
+    <div class="section-label">Sección 8</div>
+    <h2>Cierre y derivación</h2>
+    <div class="divider"></div>
+    <ul class="beneficio-list">
+      <li><strong>No publicar precio</strong> en la llamada ni en mensajes. Siempre: "armamos una propuesta a medida".</li>
+      <li>Mostrar los casos de éxito antes de hablar de precio.</li>
+      <li>Si el prospecto está interesado, derivar directamente a Jeremías para la propuesta.</li>
+      <li>Si no está listo, quedar en enviarle los links por WhatsApp y hacer seguimiento en 48–72 hs.</li>
+    </ul>
+  </section>
+
+  <div class="contact-banner">
+    <div>
+      <div class="contact-name">Jeremías</div>
+      <div class="contact-role">Equipo de ventas · Cafex</div>
+    </div>
+    <div class="contact-number">+54 9 11 5509-2051</div>
+  </div>
+
+
+  <!-- ─── Footer ─── -->
+  <div class="doc-footer">
+    <p>Cafex — Uso interno · Equipo de ventas · No distribuir externamente</p>
+    <p style="margin-top:4px;">Casos de éxito: fillippo.online · magnosapori.online</p>
+  </div>
+
+</div>
+</body>
+</html>
