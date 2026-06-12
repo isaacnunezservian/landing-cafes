@@ -1,0 +1,81 @@
+{
+  "slug": "taescrip",
+  "brand": {
+    "name": "taescrip",
+    "tagline": "Cafetería/Bar, temática retrogamer anime",
+    "description": "Cafetería/Bar, temática retrogamer anime",
+    "logoHeroPath": "/demos/taescrip/images/logo.png",
+    "logoNavbarPath": "/demos/taescrip/images/logo-navbar.png",
+    "logoNavbarExt": ".png"
+  },
+  "theme": {
+    "navBg": "#0a0807",
+    "navIconColor": "#ffffff",
+    "accentGold": "#f5d269",
+    "itemNameColor": "#ffffff",
+    "priceColor": "#f5d269",
+    "bodyBg": "#ffffff",
+    "cardBg": "#1a1a1a",
+    "categoryNavBg": "#1a1a1a",
+    "categoryActiveColor": "#f5d269",
+    "categoryInactiveColor": "#666666",
+    "itemDividerColor": "#282828",
+    "heroCTAColor": "#f53dff",
+    "whatsappBtnColor": "#25D366",
+    "aboutBg": "#0a0807",
+    "aboutTitleColor": "#ffffff",
+    "aboutAccentColor": "#cf8f4a",
+    "reviewsBg": "#1a1a1a",
+    "reviewsTextColor": "#ffffff",
+    "reviewsStarColor": "#FBBC04",
+    "suggestionsBg": "#1a1a1a",
+    "suggestionsTextColor": "#ffffff",
+    "suggestionsAccentColor": "#f5d269",
+    "footerBg": "#1a1a1a",
+    "footerTextColor": "#999999",
+    "footerAccentColor": "#f5d269"
+  },
+  "hero": {
+    "videoPath": "/demos/taescrip/hero.mp4",
+    "imageFallbackPath": null,
+    "ctaText": "Ver Menú",
+    "videoExt": ".mp4"
+  },
+  "contact": {
+    "address": "Dirección del negocio\nCiudad, País",
+    "phone": "111122334455",
+    "whatsapp": "+54 9 11 5509-2051",
+    "googleMapsEmbedUrl": "https://maps.google.com/maps?q=Direcci%C3%B3n&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    "googlePlaceId": "REEMPLAZAR_CON_PLACE_ID"
+  },
+  "hours": [
+    {
+      "days": "Lunes a Sábados",
+      "hours": "09:00 - 20:00 hs"
+    },
+    {
+      "days": "Domingos",
+      "hours": "Cerrado"
+    }
+  ],
+  "values": [
+    "Hospitalidad",
+    "Calidad",
+    "Artesanal"
+  ],
+  "seo": {
+    "title": "taescrip | Menú Digital",
+    "description": "Cafetería/Bar, temática retrogamer anime",
+    "keywords": "taescrip, menú, café"
+  },
+  "categories": {
+    "images": [
+      "/demos/taescrip/images/cat-0.jpeg",
+      "/demos/taescrip/images/cat-1.jpeg",
+      "/demos/taescrip/images/cat-2.jpeg",
+      "/demos/taescrip/images/cat-3.jpeg",
+      "/demos/taescrip/images/cat-4.jpeg",
+      "/demos/taescrip/images/cat-5.jpeg"
+    ]
+  }
+}
